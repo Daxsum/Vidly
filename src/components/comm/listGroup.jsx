@@ -1,16 +1,34 @@
-import React from 'react';
+import React from "react";
+import { getGenres } from "../../services/fakeGenreService";
 const ListGroup = (props) => {
-    return ( 
-        <div >
-            <ul className="list-group">
-  <li className="list-group-item active">Cras justo odio</li>
-  <li className="list-group-item">Dapibus ac facilisis in</li>
-  <li className="list-group-item">Morbi leo risus</li>
-  <li className="list-group-item">Porta ac consectetur ac</li>
-  <li className="list-group-item">Vestibulum at eros</li>
-</ul>
-        </div>
-     );
-}
- 
+  const { items, valueProperty, textProperty, genreOnSelect, selectedItem } =
+    props;
+
+  return (
+    <div>
+      <ul className="list-group">
+        {items.map((item) => (
+          <li
+            onClick={() => {
+              genreOnSelect(item);
+            }}
+            key={item[valueProperty]}
+            className={
+              item === selectedItem
+                ? "list-group-item active"
+                : "list-group-item"
+            }
+          >
+            {item[textProperty]}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+ListGroup.defaultProps = {
+  textProperty: "name",
+  valueProperty: "_id",
+};
+
 export default ListGroup;

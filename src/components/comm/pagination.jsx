@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import _ from "lodash";
 import propTypes from "prop-types";
 const Pagination = ({ itemSize, pageSize, pageOnChange, currentPage }) => {
@@ -18,7 +18,7 @@ const Pagination = ({ itemSize, pageSize, pageOnChange, currentPage }) => {
             >
               <a
                 className="page-link"
-                href="#"
+                href="#//"
                 onClick={() => pageOnChange(page)}
               >
                 {page}

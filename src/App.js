@@ -1,17 +1,19 @@
-import Movies from "./components/movies";
-import "./App.css";
+import React from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
+import Movies from "./components/movies";
 import NavBar from "./components/ex/NavBar";
-import { Component } from "react";
 import Customers from "./components/ex/customers";
 import Rentals from "./components/ex/rentals";
 import NotFound from "./components/ex/notFound";
 import MoviesForm from "./components/ex/moviesForm";
+import LoginForm from "./components/login";
+import "./App.css";
 function App() {
   return (
-    <main className="container">
+    <React.Fragment>
       <NavBar />
       <Switch>
+        <Route path={"/login"} component={LoginForm} />
         <Route path={"/movies/:id"} component={MoviesForm} />
         <Route path={"/movies"} component={Movies} />
         <Route path={"/customers"} component={Customers} />
@@ -20,7 +22,7 @@ function App() {
         <Redirect from="/" exact to="/movies" />
         <Redirect to="notFound" />
       </Switch>
-    </main>
+    </React.Fragment>
   );
 }
 

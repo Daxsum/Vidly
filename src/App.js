@@ -8,11 +8,13 @@ import NotFound from "./components/ex/notFound";
 import MoviesForm from "./components/ex/moviesForm";
 import LoginForm from "./components/login";
 import "./App.css";
+import Register from "./components/registration";
 function App() {
   return (
     <React.Fragment>
       <NavBar />
       <Switch>
+        <Route path={"/register"} component={Register} />
         <Route path={"/login"} component={LoginForm} />
         <Route path={"/movies/:id"} component={MoviesForm} />
         <Route path={"/movies"} component={Movies} />

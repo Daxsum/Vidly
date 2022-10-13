@@ -67,6 +67,7 @@ class Movies extends Component {
       sortColumn,
     } = this.state;
     const { length: count } = this.state.movies;
+    const { history } = this.props;
     if (count === 0) return "there is no movies to show on the database";
     const { totalCount, data: movies } = this.getPageData();
     return (
@@ -81,6 +82,13 @@ class Movies extends Component {
               />
             </div>
             <div className="col-8">
+              <button
+                onClick={() => history.push("/moviesForm")}
+                className="btn btn-primary"
+              >
+                New Movie
+              </button>
+              <br></br>
               <span>showing {totalCount} movies in the database.</span>
               <MoviesList
                 movies={movies}

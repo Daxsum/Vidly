@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Joi from "joi-browser";
 import Input from "./input";
-import { type } from "@testing-library/user-event/dist/type";
+
 // to use this for you only need to import Joi form joi-browser also don't
 // forget to install joi-browser in your system for more info searc for
 // "npm Joi".

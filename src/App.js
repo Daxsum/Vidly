@@ -23,7 +23,7 @@ function App() {
         <Route path={"/rentals"} component={Rentals} />
         <Route path={"/notFound"} component={NotFound} />
         <Redirect from="/" exact to="/movies" />
-        <Redirect to="notFound" />
+        <Redirect to="notFound" />//not found page
       </Switch>
     </React.Fragment>
   );
